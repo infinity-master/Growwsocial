@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝐆𝐫𝐨𝐰𝐰 𝐒𝐨𝐜𝐢𝐚𝐥</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h2>𝐆𝐫𝐨𝐰𝐰 𝐒𝐨𝐜𝐢𝐚𝐥</h2>
+    <p>Select a product and cryptocurrency to make the payment.</p>
+
+       
+        <select id="productSelect" onchange="checkForm()">
+            <option value="" disabled selected>Select Product</option>
+            <option value="Site Maintenance Script">Site Maintenance Script - $6</option>
+            <option value="Landing ID5060">Premium Landing page ID5060 - 5$</option>
+            <option value="Landing ID6010">Premium Landing page ID6010 - 5$</option>
+        </select>
+
+    
+    <select id="cryptoSelect" onchange="updateWallet(); checkForm()">
+        <option value="" disabled selected>Select Cryptocurrency</option>
+      <option value="BTC">BTC</option>
+<option value="BNB-BEP20">BNB-BEP20</option>
+<option value="TRX-BEP20">TRX-BEP20</option>
+<option value="USDT-BEP20">USDT-BEP20</option>
+<option value="USDT-TRC20">USDT-TRC20</option>
+<option value="TRX-TRC20">TRX-TRC20</option>
+<option value="USDT-ERC20">USDT-ERC20</option>
+<option value="LTC">LTC</option>
+    </select>
+       
+       
+    <div id="walletContainer" class="input-wallet hidden">
+    <input type="text" id="walletAddress" readonly>
+    <span class="copy-icon" onclick="copyAddress()">📋</span>
+</div>
+    
+
+    <h3>Payment Details</h3>
+    <input type="text" id="transactionID" placeholder="Enter Transaction ID" oninput="checkForm()">
+    <input type="text" id="domain" placeholder="Enter Your Domain" oninput="checkForm()">
+    <input type="text" id="telegramUsername" placeholder="Enter Telegram Username" oninput="checkForm()">
+
+    <button id="submitBtn" onclick="sendToTelegram()" disabled>Place Order</button>
+
+    <!-- Overlay -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Popup -->
+    <div id="popup" class="popup">
+    <button class="close-btn" onclick="closePopup()">✖</button>
+    <h3>✅ Order Placed Successfully!</h3>
+    <p>Your Order Tracking ID:</p>
+    
+    <div class="input-container">
+    <input type="text" id="trackingID" readonly>
+    <span class="copy-icon" onclick="copyTrackingID()">📋</span>
+</div>   
+    <button onclick="redirectToTracking()">📦 Track Order</button>
+</div>
+
+<script src="jquery.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
