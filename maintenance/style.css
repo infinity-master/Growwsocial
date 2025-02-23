@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0a, #222);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 45px;
+            border-radius: 14px;
+            backdrop-filter: blur(12px);
+            width: 90%;
+            max-width: 450px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            animation: floatUp 3.5s ease-in-out infinite alternate;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 12px;
+            background: linear-gradient(90deg, #ffcc00, #ff6600);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 17px;
+            margin-bottom: 20px;
+            opacity: 0.85;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            margin: 0 14px;
+            font-size: 28px;
+            text-decoration: none;
+            transition: transform 0.3s ease, color 0.3s ease, scale 0.1s ease-in-out;
+        }
+
+        /* Social Media Brand Colors */
+        .social-icons .facebook { color: #1877f2; }
+        .social-icons .twitter { color: #000000; }
+        .social-icons .instagram { color: #E4405F; }
+        .social-icons .linkedin { color: #0077b5; }
+
+        /* Hover Effect */
+        .social-icons a:hover {
+            color: #ffcc00 !important;
+            transform: scale(1.25);
+        }
+
+        .social-icons a:active {
+            transform: scale(0.9);
+            transition: transform 0.1s ease;
+        }
+
+        .glow-effect {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(rgba(255, 204, 0, 0.3), transparent);
+            border-radius: 50%;
+            filter: blur(50px);
+            animation: glowMove 5s linear infinite alternate;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes floatUp {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-12px); }
+        }
+
+        @keyframes glowMove {
+            0% { transform: translate(-40%, -40%); }
+            100% { transform: translate(40%, 40%); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .container {
+                padding: 35px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+
+            .social-icons a {
+                font-size: 24px;
+            }
+        }
